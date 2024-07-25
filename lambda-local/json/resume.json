@@ -1,0 +1,68 @@
+{
+    "basics": {
+      "name": "Sheriff Joe",
+      "label": "Cloud Infrastruture & DevOps Engineer",
+      "image": "",
+      "email": "aesheriff30@gmail.com",
+      "phone": "+2349159381912",
+      "url": "https://github.com/realexcel2021",
+      "summary": "A young passionate devops engineer eager to learn new technologies and concepts related to the cloud. Experience working in devops, cloud and implementing concepts such as gitops, CICD, monitoring and logging.",
+      "location": {
+        "address": "No. 24 Kabido Street Kaduna",
+        "postalCode": "KAD 8000246",
+        "city": "Kaduna State",
+        "countryCode": "NG",
+        "region": "Kaduna State"
+      },
+      "profiles": [{
+        "network": "Twitter",
+        "username": "sheriffexcel",
+        "url": "https://twitter.com/sheriffexcel"
+      }]
+    },
+    "work": [{
+      "name": "Hostspace Cloud",
+      "position": "DevOps Engineer",
+      "url": "https://hostspaceng.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Started the company"
+      ]
+    }],
+    "volunteer": [{
+      "organization": "Hadassah Foundtion",
+      "position": "Volunteer Frontend Engineer",
+      "url": "https://haddassahfoundation.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }],
+    "skills": [{
+      "name": "DevOps Engineer",
+      "level": "Associate",
+      "keywords": [
+        "Git",
+        "Docker",
+        "CICD",
+        "Grafana",
+        "Ansible",
+        "Github Actions"
+      ]
+    }],
+    "languages": [{
+      "language": "English",
+      "fluency": "Native speaker"
+    }],
+    "projects": [{
+      "name": "3 Tier Artchitecture",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "Description...",
+      "url": "https://github.com/realexcel2021/3-tier-Architecture-design/"
+    }]
+  }

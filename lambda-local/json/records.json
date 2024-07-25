@@ -1,0 +1,13 @@
+{
+    "TableName": "records",
+    "KeySchema": [
+      { "AttributeName": "resume", "KeyType": "HASH" }
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "resume", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 1,
+      "WriteCapacityUnits": 1
+    }
+}
