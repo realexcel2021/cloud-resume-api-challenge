@@ -22,10 +22,6 @@ def responseFormat(Item):
    }
 
 def lambda_handler(event: any, context: any):
-    body = event.get('body')
-    json_param = json.loads(body)
-
-    count = 0
     result = ""
     status_code = 500
 
