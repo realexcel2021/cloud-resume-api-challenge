@@ -1,3 +1,8 @@
+
+#######################################
+# policy to allow apigateway invoke lambda function
+
+
 module "apigateway_put_events_to_lambda_us_east_1" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
   version = "~> 4.0"

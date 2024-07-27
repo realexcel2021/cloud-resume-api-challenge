@@ -1,3 +1,6 @@
+#############################
+# API 
+
 resource "aws_api_gateway_rest_api" "my_api" {
   name        = "${var.project_name}-api"
   description = "Api that points to a lambda function"
@@ -7,6 +10,10 @@ resource "aws_api_gateway_rest_api" "my_api" {
   }
 }
 
+##################################
+# API gateway deployment 
+# it iwll also redeploy once there's any change in any method or integration
+#################################
 resource "aws_api_gateway_deployment" "deployment" {
   depends_on = [
     aws_api_gateway_integration.lambda_integration
@@ -27,12 +34,16 @@ resource "aws_api_gateway_deployment" "deployment" {
   stage_name  = "dev"
 }
 
+################################
+# method to get resume data /resume-data
 resource "aws_api_gateway_resource" "root" {
   rest_api_id = aws_api_gateway_rest_api.my_api.id
   parent_id   = aws_api_gateway_rest_api.my_api.root_resource_id
   path_part   = "resume-data"
 }
 
+#####################################
+# basically get request
 resource "aws_api_gateway_method" "proxy" {
   rest_api_id   = aws_api_gateway_rest_api.my_api.id
   resource_id   = aws_api_gateway_resource.root.id
@@ -40,6 +51,8 @@ resource "aws_api_gateway_method" "proxy" {
   authorization = "NONE"
 }
 
+############################################
+# integrate with lambda using AWS_PROXY integration
 resource "aws_api_gateway_integration" "lambda_integration" {
   rest_api_id             = aws_api_gateway_rest_api.my_api.id
   resource_id             = aws_api_gateway_resource.root.id
@@ -50,6 +63,8 @@ resource "aws_api_gateway_integration" "lambda_integration" {
   credentials             = module.apigateway_put_events_to_lambda_us_east_1.iam_role_arn
 }
 
+##################################################
+# method OK 200 response allowing CORS
 resource "aws_api_gateway_method_response" "proxy" {
   rest_api_id = aws_api_gateway_rest_api.my_api.id
   resource_id = aws_api_gateway_resource.root.id
@@ -65,6 +80,8 @@ resource "aws_api_gateway_method_response" "proxy" {
 
 }
 
+###################################################
+# Integration response from lambda
 resource "aws_api_gateway_integration_response" "proxy" {
   rest_api_id = aws_api_gateway_rest_api.my_api.id
   resource_id = aws_api_gateway_resource.root.id
