@@ -78,7 +78,7 @@ Check the terraform apply step for the api invoke url as outputs.
 
 # Accessing the API
 
-Ensure you access the api on the invoke url route /resume-data
+Ensure you access the api on the invoke url route /resume-data for example: https://vkmm0lx8g3.execute-api.us-east-1.amazonaws.com/dev/resume-data
 
 
 
