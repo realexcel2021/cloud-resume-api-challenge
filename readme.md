@@ -66,6 +66,16 @@ Apply the configuration
 terraform apply --auto-approve
 ```
 
+## Using the GitHub Actions Pipeline
+
+The repo also contains a github actions pipeline script which is explained in detail in this article: https://medium.com/@aesheriff30/cloud-resume-api-challenge-aws-phase-4-devops-practices-d9acd20f0bd6
+
+But on a high level, to use the pipeline, ensure that you set the repository secrets for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. The values should be your AWS access keys to authenticate to AWS.
+
+To trigger the pipeline the provisions resources, you can push some changes to the repo and the pipeline will be automatically triggered. ALternatively, you can simply trigger the pipeline from github actions UI using the workflow dispatch.
+
+Check the terraform apply step for the api invoke url as outputs.
+
 # Accessing the API
 
 Ensure you access the api on the invoke url route /resume-data

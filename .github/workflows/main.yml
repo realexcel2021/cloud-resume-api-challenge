@@ -3,6 +3,7 @@ name: 'Apply Terraform'
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   Apply-Terraform:
