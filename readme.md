@@ -72,9 +72,15 @@ The repo also contains a github actions pipeline script which is explained in de
 
 But on a high level, to use the pipeline, ensure that you set the repository secrets for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. The values should be your AWS access keys to authenticate to AWS.
 
+Also make sure you set the state bucket name to your s3 bucket name. See `/terraform-infra/backend.tf` to edit the bucket name.
+
 To trigger the pipeline the provisions resources, you can push some changes to the repo and the pipeline will be automatically triggered. ALternatively, you can simply trigger the pipeline from github actions UI using the workflow dispatch.
 
 Check the terraform apply step for the api invoke url as outputs.
+
+### To Destroy
+
+To clean up resources created, there's a pipeline you can trigger manually. Ensure you select "yes" lto destroy aws resources completely.
 
 # Accessing the API
 
